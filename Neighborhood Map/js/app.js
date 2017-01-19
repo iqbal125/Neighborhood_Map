@@ -1,5 +1,5 @@
 var infowindow, map;
-
+var markers = [];
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -9,7 +9,6 @@ function initMap() {
         zoom: 16
     });
     var currentMarker = null
-    var markers = [];
     infowindow = new google.maps.InfoWindow()
 
     for (i = 0; i < restaurants.length; i++) {
