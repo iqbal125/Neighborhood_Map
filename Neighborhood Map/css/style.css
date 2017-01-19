@@ -1,0 +1,35 @@
+#map {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div .row {
+  background-color: #262626;
+}
+
+#head {
+  text-align: center;
+  color: white;
+  margin: 10px;
+  font-size: 20px;
+}
+
+#top {
+  background-color: #0d0d0d;
+}
+
+input {
+  width: 90%;
+  height: 20%;
+  color: black;
+}
+
+#searchtxt {
+  margin: 25px;
+  color: white;
+}
