@@ -8,13 +8,17 @@ var fsrequest = function (marker) {
   var venueFoursquareID = marker.id;
   var foursquareURL = apiURL + venueFoursquareID + '?client_id=' + foursquareClientID +  '&client_secret=' + foursquareSecret +'&v=' + foursquareVersion;
 
+  /*async request for the FourSquare api data*/
   $.ajax({
     url: foursquareURL,
     success: function(data) {
       console.log(data);
+      /*FourSquare api data is stored here*/
       var rating = data.response.venue.rating;
       var name =  data.response.venue.name;
       var location = data.response.venue.location.address;
+
+      /*The infowindow is udpdated with the FourSquare api data and the infowindow is opened immediately afterwards*/
       infowindow.setContent(name + "; FourSquare Rating: " + rating.toString() + "; " + location);
       infowindow.open(map, marker);
       }

@@ -1,4 +1,6 @@
 
+
+/* Restaurant Data used in the project conveniently stored here*/
 var restaurants = [
 
     {
@@ -9,7 +11,6 @@ var restaurants = [
         },
         address: "500 San Mateo Ave, San Bruno, CA 94066",
         fourSquareVenueID: "4b4aac62f964a520a98c26e3",
-        visible: ko.observable(true)
     },
     {
         name: "Roma Deli",
@@ -19,7 +20,6 @@ var restaurants = [
         },
         address: "424 San Mateo Ave San Bruno, CA 94066",
         fourSquareVenueID: "4ac6555df964a520c8b320e3",
-        visible: ko.observable(true)
     },
     {
         name: "West Coast Cafe",
@@ -29,7 +29,6 @@ var restaurants = [
         },
         address: "466 San Mateo Ave San Bruno, CA 94066",
         fourSquareVenueID: "4b397095f964a5209f5c25e3",
-        visible: ko.observable(true)
     },
     {
         name: "Noori",
@@ -39,7 +38,6 @@ var restaurants = [
         },
         address: "632 San Mateo Ave San Bruno, CA 94066",
         fourSquareVenueID: "53fd3984498e491b20ab1158",
-        visible: ko.observable(true)
     },
     {
         name: "Cleo’s Brazilian Steakhouse",
@@ -49,6 +47,5 @@ var restaurants = [
         },
         address: "446 San Mateo Ave San Bruno, CA 94066",
         fourSquareVenueID: "4bf498abff90c9b6a0805528",
-        visible: ko.observable(true)
     }
 ]
