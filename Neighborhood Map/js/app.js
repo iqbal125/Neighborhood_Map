@@ -37,6 +37,10 @@ function initMap() {
             }
         })(marker))
     }
+    /*Map Error handling */
+    if(!map) {
+      alert("Map could not be displayed, please try again.")
+    }
 
     /*Calls the viewModel method in knockoutfile.js*/
     ko.applyBindings(viewModel());

@@ -22,6 +22,9 @@
           <p>
            <input placeholder="..." type="search" data-bind="textInput: userInput"/>
          </p>
+         <ul data-bind="foreach: filteredItems">
+           <li data-bind="text: name"></li>
+         </ul>
         </div>
         <div class="col-md-8">
           <div class="embed-responsive embed-responsive-4by3">

@@ -28,7 +28,7 @@ var viewModel = function() {
           /*first we call the call the arrayFilter method and give the locations
             array as an argument*/
           return ko.utils.arrayFilter(self.locations(), function(item) {
-            /*Next we store the result in the variable "match" of getting the lower case maker name and 
+            /*Next we store the result in the variable "match" of getting the lower case maker name and
               making sure that indexOf(filter) returns greater than or equal to 0. If true then the
               array is filtered for only the markers name that match the userinput, which allows for
               real time search functionality in the map.*/
