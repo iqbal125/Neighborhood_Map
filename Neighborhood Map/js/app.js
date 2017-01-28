@@ -1,4 +1,5 @@
 /*This file stores the method for creating the map.*/
+
 var infowindow, map;
 var markers = [];
 
@@ -14,7 +15,6 @@ function initMap() {
 
     var currentMarker = null
     infowindow = new google.maps.InfoWindow()
-
     /*Iterates over the restaurants array and creates a marker for each object*/
     for (i = 0; i < restaurants.length; i++) {
         var marker = new google.maps.Marker({
@@ -28,20 +28,20 @@ function initMap() {
         markers.push(marker);
         /*Animates the markers when clicked*/
         marker.addListener('click', (function(marker) {
-            return function() {
+            return function () {
                 fsrequest(marker);
                 /*Prevents more than one marker from being animated at a time*/
                 if (currentMarker) currentMarker.setAnimation(null);
                 currentMarker = marker;
                 marker.setAnimation(google.maps.Animation.BOUNCE);
-            }
-        })(marker))
+           }
+       })(marker))
     }
-    /*Map Error handling */
-    if(!map) {
-      alert("Map could not be displayed, please try again.")
-    }
+    /*Calls the ViewModel method in knockoutfile.js*/
+    ko.applyBindings(new ViewModel());
+}
 
-    /*Calls the viewModel method in knockoutfile.js*/
-    ko.applyBindings(viewModel());
+/*Google maps error handling */
+function errorHandling() {
+	alert("Google Maps has failed to load. Please try again.");
 }

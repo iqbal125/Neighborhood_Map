@@ -1,16 +1,19 @@
 /* The ViewModel of the project*/
 
-var viewModel = function() {
+var ViewModel = function() {
     var self = this;
     /*Stores and updates userInput from index.html line 23 with a knockout.js "textinput" databind*/
     self.userInput = ko.observable('');
     /*Stores and upates markers in knockout.js observable array*/
     self.locations = ko.observableArray();
     /*Iterates over markers array and creates copies in the locations observable array*/
-    for(i = 0; i < markers.length; i++) {
+    for(var i = 0; i < markers.length; i++) {
       self.locations.push(markers[i])
     }
-
+    /*Animates the markers and opens the infowindow when text in the listview is clicked*/
+    self.listedItem = function(marker) {
+       google.maps.event.trigger(marker, 'click');
+    }
     /*Function to filter markers in real-time based on user input*/
       this.filteredItems = ko.computed(function() {
         /*converts userInput to lowercase and stores in filter*/

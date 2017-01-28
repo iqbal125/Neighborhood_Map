@@ -1,4 +1,4 @@
-
+/* This file contains the ajax request for the project. */
 
 var fsrequest = function (marker) {
   var apiURL = 'https://api.foursquare.com/v2/venues/';
@@ -18,14 +18,13 @@ var fsrequest = function (marker) {
       var name =  data.response.venue.name;
       var location = data.response.venue.location.address;
 
-      /*Foursquare Api error handling*/
-      if(!data) {
-        alert("Foursquare api could not retrieve data, please try again. ")
-      };
-
       /*The infowindow is udpdated with the FourSquare api data and the infowindow is opened immediately afterwards*/
       infowindow.setContent(name + "; FourSquare Rating: " + rating.toString() + "; " + location);
       infowindow.open(map, marker);
-      }
-    });
-  };
+      },
+      /*Foursquare api error handling*/
+      error: function(error) {
+        alert("Error, Four Square api data could not display")
+    }
+  });
+};

@@ -17,13 +17,13 @@
       <div class="row">
         <div class="col-md-4">
           <p id="searchtxt">
-           Search:
+           Search Restaurants:
           </p>
           <p>
-           <input placeholder="..." type="search" data-bind="textInput: userInput"/>
+           <input type="search" data-bind="textInput: userInput">
          </p>
          <ul data-bind="foreach: filteredItems">
-           <li data-bind="text: name"></li>
+           <li data-bind="text: name, click: $root.listedItem"></li>
          </ul>
         </div>
         <div class="col-md-8">
@@ -36,10 +36,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpheeEW7LQ9iW8PKGb0fCDMLpV8oXA--4&callback=initMap"></script>
     <script src="js/model.js"></script>
     <script src="js/jqueryfile.js"></script>
     <script src="js/app.js"></script>
     <script src="js/knockoutfile.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpheeEW7LQ9iW8PKGb0fCDMLpV8oXA--4&callback=initMap" onerror="errorHandling()"></script>
   </body>
 </html>
